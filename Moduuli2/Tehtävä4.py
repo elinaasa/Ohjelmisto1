@@ -1,6 +1,5 @@
 # Kirjoita ohjelma, joka kysyy kolme kokonaislukua.
 # Ohjelma tulostaa lukujen summan, tulon ja keskiarvon.
-
 luku1 = float(input("Syötä ensimmäinen kokonaisluku: "))
 luku2 = float(input("Syötä toinen kokonaisluku: "))
 luku3 = float(input("Syötä kolmas kokonaisluku: "))

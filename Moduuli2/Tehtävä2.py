@@ -1,8 +1,6 @@
 import math
-
-#Kirjoita ohjelma, joka kysyy ympyrän säteen
+# Kirjoita ohjelma, joka kysyy ympyrän säteen
 # ja tulostaa sen pinta-alan.
-
 sade_str = input("Syötä ympyrän säde metreinä: ")
 sade = float(sade_str)
 pinta_ala = math.pi * (sade ** 2)
