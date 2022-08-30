@@ -7,5 +7,5 @@ luodit = float(input("Anna luodit: "))
 massa = 13.3 * (luodit + (32 * (naulat + (20 * leiviskat))))
 massakiloina = massa / 1000
 massakiloina_int = int(massakiloina)
-ylijaama = int((massakiloina - int(massakiloina)) * 1000)
-print("Massa nykymittojen mukaan: " + str(massakiloina_int) + " kiloa ja " + str(ylijaama) + " grammaa.")
+ylijaama = ((massakiloina - int(massakiloina)) * 1000)
+print(f"Massa nykymittojen mukaan: " + str(massakiloina_int) + " kiloa ja " + str(ylijaama) + " grammaa.")
