@@ -12,4 +12,4 @@ kuha = float(input("Anna kuhan pituus senttimetreinä: "))
 if kuha < 37:
     print("Kuha on alamittainen, laske se takaisin järveen. Pienin sallittu mitta on 37 cm.")
 else:
-    print("Hieno kala!")
+    print("Hieno kala! :-)")
