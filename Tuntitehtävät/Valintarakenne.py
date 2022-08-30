@@ -19,4 +19,10 @@
 # if mjono1 == mjono2:
 #    print("Annoit saman eläinlajin.")
 
-muuttuja1 = 5
+ika = int(input("Anna ikäsi: "))
+if ika >= 15 and ika < 18:
+    paino = float(input("Anna painosi: "))
+if ika >= 18 or (ika >= 15 and paino >= 55):
+    print("Lääkkeen käyttö sallittu.")
+else:
+    print("Lääkkeen käyttö ei sallittu.")
