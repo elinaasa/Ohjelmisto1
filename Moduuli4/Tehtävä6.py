@@ -18,6 +18,18 @@
 # Lopuksi ohjelma tulostaa piin likiarvon käyttäjälle.
 # (Huomaa, että jokaisesta arvotusta pisteestä (x,y) on helppoa testata
 # onko se yksikköympyrän A sisällä: riittää testata, toteuttaako piste epäyhtälön x^2+y^2<1.)
-import math
-pisteet = float(input("Syötä arvottavien pisteiden lukumäärä: "))
 
+import random
+
+pisteiden_maara = int(input("Syötä pisteiden määrä: "))
+N = 0
+n = 0
+while N != pisteiden_maara:
+    N += 1
+    x = random.uniform(-1, 1)
+    y = random.uniform(-1, 1)
+    if x ** 2 + y ** 2 < 1:
+        n += 1
+if N == pisteiden_maara:
+    pi = 4 * n / N
+    print("Piin likiarvo annetuilla pisteillä: " + str(pi))
