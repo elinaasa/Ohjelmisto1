@@ -8,17 +8,19 @@ import math
 
 def pizza(halkaisija, hinta):
     pinta_ala = math.pi * (halkaisija / 2) ** 2
-    value = pinta_ala / hinta
+    value = hinta / pinta_ala
     return value
 
 
 hinta1 = float(input("Syötä 1. pizzan hinta: "))
-halkaisija1 = float(input("Syötä 1. pizzan halkaisija: "))
+halkaisija1 = float(input("Syötä 1. pizzan halkaisija metreinä: "))
 hinta2 = float(input("Syötä 2. pizzan hinta: "))
-halkaisija2 = float(input("Syötä 2. pizzan halkaisija: "))
+halkaisija2 = float(input("Syötä 2. pizzan halkaisija metreinä: "))
 value1 = pizza(halkaisija1, hinta1)
 value2 = pizza(halkaisija2, hinta2)
-if value1 < value2:
+print("Ensimmäisen pizzan hinta per neliö: ", value1)
+print("Toisen pizzan hinta per neliö: ", value2)
+if value1 > value2:
     print("2. pizza on parempi vaihtoehto.")
 else:
     print("1. pizza on parempi vaihtoehto.")
