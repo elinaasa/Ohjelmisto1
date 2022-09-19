@@ -4,14 +4,24 @@
 # ICAO-koodi on tallennettuna airport-taulun ident-sarakkeeseen.
 import mysql.connector
 
+connection = mysql.connector.connect(
+    host="127.0.0.1",
+    port=3306,
+    database="flight_game",
+    user="root",
+    password="Salainensana123",
+    autocommit=True
+)
 
-def connect_database():
-    return mysql.connector.connect(
-         host='127.0.0.1',
-         port=3306,
-         database='flight_game',
-         user='username',
-         password='password',
-         autocommit=True
-         )
-connection = connect_database()
+
+def hae_icao(icao):
+    sql = f"""SELECT name, municipality FROM airport WHERE ident="{icao.upper()}";"""
+    cursor = connection.cursor()
+    cursor.execute(sql)
+    return cursor.fetchall()
+
+
+tulos = hae_icao(input("Kirjoita lentoaseman ICAO-koodi: "))
+
+for t in tulos:
+    print("Lentokenttä", t[0], " sijaitsee kunnassa ", t[1])
