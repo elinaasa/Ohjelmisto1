@@ -4,13 +4,12 @@
 # vastaavat vuodenajat merkkijonoina monikkotietorakenteeseen.
 # Määritellään kukin vuodenaika kolmen kuukauden mittaiseksi siten,
 # että joulukuu on ensimmäinen talvikuukausi.
-talvi = ("joulukuu", "tammikuu", "helmikuu")
-"maaliskuu", "huhtikuu", "toukokuu",
-"kesäkuu", "heinäkuu", "elokuu",
-"syyskuu", "lokakuu", "marraskuu")
 
-numero = int(input("Syötä kuukauden numero: "))
-if numero <= 3:
-    print()
+vuodenaika = ("talvi", "talvi", "talvi",
+              "kevät", "kevät", "kevät",
+              "kesä", "kesä", "kesä",
+              "syksy", "syksy", "syksy")
 
-
+kknumero = int(input("Syötä kuukauden numero (1-12): "))
+numero = vuodenaika[kknumero - 1]
+print("Kuukauden vuodenaika on ", numero)
