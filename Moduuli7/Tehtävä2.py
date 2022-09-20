@@ -15,3 +15,5 @@ while True:
     else:
         print("Uusi nimi.")
         nimet.add(nimi)
+for nimi in nimet:
+    print(nimi)
