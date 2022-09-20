@@ -1,27 +1,23 @@
 # Kirjoita ohjelma, joka kysyy käyttäjältä lentoaseman ICAO-koodin.
 # Ohjelma hakee ja tulostaa koodia vastaavan lentokentän nimen ja
 # sen sijaintikunnan kurssilla käytettävästä lentokenttätietokannasta.
-# ICAO-koodi on tallennettuna airport-taulun ident-sarakkeeseen.
 import mysql.connector
-
-connection = mysql.connector.connect(
-    host="127.0.0.1",
-    port=3306,
-    database="flight_game",
-    user="root",
-    password="Salainensana123",
-    autocommit=True
-)
-
-
-def hae_icao(icao):
-    sql = f"""SELECT name, municipality FROM airport WHERE ident="{icao.upper()}";"""
-    cursor = connection.cursor()
-    cursor.execute(sql)
-    return cursor.fetchall()
+def connect_database():
+        return mysql.connector.connect(
+         host='127.0.0.1',
+         port= 3306,
+         database='flight_game',
+         user='root',
+         password='Salainensana123',
+         autocommit=True
+         )
+connection = connect_database()
 
 
-tulos = hae_icao(input("Kirjoita lentoaseman ICAO-koodi: "))
-
-for t in tulos:
-    print("Lentokenttä", t[0], " sijaitsee kunnassa ", t[1])
+sql = "SELECT * FROM country WHERE iso_country='FI';"
+cursor = connection.cursor()
+cursor.execute(sql)
+result = cursor.fetchall() # type of result; list
+for row in result:
+    # type of row: tuple
+    print(f"{row[0]}: {row[1]}, wikipedia: {row[3]}")

@@ -5,11 +5,11 @@
 # Määritellään kukin vuodenaika kolmen kuukauden mittaiseksi siten,
 # että joulukuu on ensimmäinen talvikuukausi.
 
-vuodenaika = ("talvi", "talvi", "talvi",
-              "kevät", "kevät", "kevät",
-              "kesä", "kesä", "kesä",
-              "syksy", "syksy", "syksy")
+vuodenaika = ("talvi", "talvi", "kevät",
+              "kevät", "kevät", "kesä",
+              "kesä", "kesä", "syksy",
+              "syksy", "syksy", "talvi")
 
 kknumero = int(input("Syötä kuukauden numero (1-12): "))
-numero = vuodenaika[kknumero - 1]
+numero = vuodenaika[kknumero-1]
 print("Kuukauden vuodenaika on ", numero)
