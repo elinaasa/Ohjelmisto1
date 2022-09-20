@@ -10,10 +10,13 @@ def connect_database():
          password='Salainensana123',
          autocommit=True
          )
+
+
 connection = connect_database()
 
+
 def hae_icao(icao):
-    sql = f"""SELECT name, municipality FROM airport WHERE ident="{icao.upper()}";"""
+    sql = f"""SELECT name, municipality FROM airport WHERE ident=" + icao + """
     cursor = connection.cursor()
     cursor.execute(sql)
     return cursor.fetchall()
