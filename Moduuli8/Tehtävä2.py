@@ -15,23 +15,10 @@ connection = mysql.connector.connect(
     autocommit=True
 )
 
-
-def hae_lentokentta(iso_country):
-    sql = """SELECT type FROM airport WHERE iso_country=" + iso_country + """
-    cursor = connection.cursor()
-    cursor.execute(sql)
-    result = cursor.fetchall()
-    return result
-
-
 maakoodi = input("Kirjoita maakoodi: ")
-tulos = hae_lentokentta(maakoodi)
-lentokentta_maarat = {}
-for t in tulos:
-    if t in lentokentta_maarat:
-        lentokentta_maarat[t] += 1
-    else:
-        lentokentta_maarat[t] = 1
-
-for key, value in lentokentta_maarat.items():
-    print("Lentokenttätyyppiä", key[0], "on", value, "kappaletta.")
+sql = "SELECT type, count(*) FROM airport WHERE iso_country = '" + maakoodi + "' GROUP BY type"
+cursor = connection.cursor()
+cursor.execute(sql)
+tulos = cursor.fetchall()
+for rivi in tulos:
+    print("Lentokenttätyyppiä", rivi[0], rivi[1], "kappaletta.")
