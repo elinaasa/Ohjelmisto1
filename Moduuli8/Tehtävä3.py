@@ -19,7 +19,7 @@ connection = mysql.connector.connect(
 
 
 def sijainti(icao):
-    sql = f"""SELECT latitude_deg, longitude_deg FROM airport WHERE ident="{icao.upper()}";"""
+    sql = """SELECT latitude_deg, longitude_deg FROM airport WHERE ident = " + icaa + """
     cursor = connection.cursor()
     cursor.execute(sql)
     return cursor.fetchone()

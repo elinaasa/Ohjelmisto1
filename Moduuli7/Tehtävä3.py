@@ -16,7 +16,6 @@ def lisaa_kentta():
     icao = input("Syötä lentoaseman ICAO-koodi: ")
     nimi = input("Syötä lentoaseman nimi : ")
     lentokentat[icao] = nimi
-    return
 
 
 def etsi_kentta():
@@ -26,7 +25,6 @@ def etsi_kentta():
         print(nimi)
     else:
         print("Lentokenttää ei löytynyt.")
-    return
 
 
 while True:

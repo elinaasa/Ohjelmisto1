@@ -17,7 +17,7 @@ connection = mysql.connector.connect(
 
 
 def hae_lentokentta(iso_country):
-    sql = f"""SELECT type FROM airport WHERE iso_country="{iso_country.upper()}";"""
+    sql = """SELECT type FROM airport WHERE iso_country=" + iso_country + """
     cursor = connection.cursor()
     cursor.execute(sql)
     result = cursor.fetchall()
